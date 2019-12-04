@@ -25,7 +25,7 @@ class HAdmin extends Component{
                 <div className="container">
                     <h1>HALAMAN ADMIN</h1>
                     <br/>
-                    <Link className="btn btn-info">TAMBAH ADMIN</Link>
+                    <Link to="/tadmin" className="btn btn-info">TAMBAH ADMIN</Link>
                     <hr/>
                     <AllAdmin data={this.state.admin} />
                 </div>
