@@ -127,6 +127,7 @@ const DeleteUser = (id) => Delete('UserController/index_delete?id=',id)
 const DeleteAdmin = (id) => Delete('AdminController/index_delete?id=',id)
 const GetPesanId = (data) => GET_ID('ImageUpload?id=',data)
 const GetUserId = (data) => GET_ID('UserController?id=',data)
+const GetAdminId = (data) => GET_ID('AdminController?id=',data)
 
 
 
@@ -150,7 +151,8 @@ const API = {
     DeleteUser,
     GetUserId,
     GetAdmin,
-    PostAdmin
+    PostAdmin,
+    GetAdminId
 }
 
 export default API

@@ -3,7 +3,7 @@ import NavbarU from './NavbarU'
 
 class AkunU extends Component {
     constructor(props) {
-        super(props)
+        super(props) 
         this.state = {
             nama: '',
             alamat: '',
