@@ -20,6 +20,7 @@ import PemesananA from './Component/Admin/PemesananA';
 import EditPemesanan from './Component/Admin/EditPemesanan';
 import UserA from './Component/Admin/UserA';
 import DetailUser from './Component/Admin/DetailUser';
+import HAdmin from './Component/Admin/HAdmin';
 
 function App() {
   return (
@@ -44,6 +45,8 @@ function App() {
         <Route path="/editpesan/:id" component={EditPemesanan} />
         <Route path="/usera" component={UserA} />
         <Route path='/detailuser/:id' component={DetailUser}/>
+        <Route path='/hadmin' component={HAdmin}/>
+
 
 
 

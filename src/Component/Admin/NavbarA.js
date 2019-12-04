@@ -42,7 +42,7 @@ class NavbarA extends Component {
                                 <li><Link to="/produka" >PRODUK</Link></li>
                                 <li> <Link to="/pemesanana" >PEMESANAN</Link></li>
                                 <li> <Link  to="/usera" >USER</Link></li>
-                                <li> <Link >ADMIN</Link></li>
+                                <li> <Link to="/hadmin" >ADMIN</Link></li>
                                 <li> <Link onClick={this.logout} >LOGOUT</Link></li>
                             </ul>
                         </div>
