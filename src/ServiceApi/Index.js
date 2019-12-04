@@ -109,6 +109,7 @@ const POSTPESAN = (path,data) =>{
 
 const GetProduk = () => GET('ProdukController')
 const GetUser = () => GET('UserController')
+const GetAdmin = () => GET('AdminController')
 const GetAllPesan = () => GET('PemesananController')
 const GetProdukId = (data) => GET_ID('ProdukController?id=',data)
 const PostLogin = (data) => LOGIN('LoginController',data)
@@ -144,7 +145,8 @@ const API = {
     PutPesan,
     GetUser,
     DeleteUser,
-    GetUserId
+    GetUserId,
+    GetAdmin
 }
 
 export default API
