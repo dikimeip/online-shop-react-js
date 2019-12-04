@@ -123,6 +123,7 @@ const DeleteProduk = (id) => Delete('ProdukController/index_delete?id=',id)
 const DeletePemesanan = (id) => Delete('PemesananController/index_delete?id=',id)
 const DeleteUser = (id) => Delete('UserController/index_delete?id=',id)
 const GetPesanId = (data) => GET_ID('ImageUpload?id=',data)
+const GetUserId = (data) => GET_ID('UserController?id=',data)
 
 
 
@@ -142,7 +143,8 @@ const API = {
     GetPesanId,
     PutPesan,
     GetUser,
-    DeleteUser
+    DeleteUser,
+    GetUserId
 }
 
 export default API
