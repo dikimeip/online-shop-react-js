@@ -11,7 +11,7 @@ class DUsera extends Component {
                     <td> {data.email_user} </td>
                     <td> {data.no_hp_user} </td>
                     <td>
-                        <Link className="btn btn-info btn-sm">DETAIL</Link>
+                        <Link to={"/detailuser/"+data.id_user} className="btn btn-info btn-sm">DETAIL</Link>
                         <Link onClick={()=>this.props.remove(data.id_user)} className="btn btn-warning btn-sm">HAPUS</Link>
                     </td>
                 </tr>

@@ -19,6 +19,7 @@ import DetailProdukA from './Component/Admin/DetailProdukA';
 import PemesananA from './Component/Admin/PemesananA';
 import EditPemesanan from './Component/Admin/EditPemesanan';
 import UserA from './Component/Admin/UserA';
+import DetailUser from './Component/Admin/DetailUser';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/pemesanana" component={PemesananA} />
         <Route path="/editpesan/:id" component={EditPemesanan} />
         <Route path="/usera" component={UserA} />
+        <Route path='/detailuser/:id' component={DetailUser}/>
 
 
 
