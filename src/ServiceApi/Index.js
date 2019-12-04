@@ -121,6 +121,7 @@ const PostAdmin = (data) => POSTPESAN('AdminController',data)
 const PostImageP = (data,name) => POSTIMAGE('ImageUpload',data,name)
 const PutProduk = (data) => PUTPRODUK('ProdukController',data);
 const PutPesan = (data) => PUTPRODUK('PemesananController',data);
+const PutAdmin = (data) => PUTPRODUK('AdminController',data);
 const DeleteProduk = (id) => Delete('ProdukController/index_delete?id=',id)
 const DeletePemesanan = (id) => Delete('PemesananController/index_delete?id=',id)
 const DeleteUser = (id) => Delete('UserController/index_delete?id=',id)
@@ -152,7 +153,8 @@ const API = {
     GetUserId,
     GetAdmin,
     PostAdmin,
-    GetAdminId
+    GetAdminId,
+    PutAdmin
 }
 
 export default API

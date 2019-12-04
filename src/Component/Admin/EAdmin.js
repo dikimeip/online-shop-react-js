@@ -9,6 +9,7 @@ class EAdmin extends Component {
             id: '',
             nama: '',
             username: '',
+            password :'' ,
             email: '',
             foto: '',
             fotos: '',
@@ -24,11 +25,49 @@ class EAdmin extends Component {
                 id : res.id_admin,
                 nama : res.nama_admin,
                 username : res.username_admin,
+                password : res.password_admin,
                 email : res.email_admin,
                 foto : res.foto_admin
             })
         })
     }
+
+    dataHandler = (event) => {
+        this.setState({
+            [event.target.name] : event.target.value
+        })
+    }
+
+    imgHandler = (e) => {
+        this.setState({
+            foto: e.target.files[0].name,
+            fotos: e.target.files[0].name,
+            file: {
+                fto: e.target.files[0]
+            }
+        })
+    }
+
+    submitHandler = (e) => {
+        e.preventDefault()
+        if (this.state.fotos === "") {
+           API.PutAdmin(this.state).then(res=>{
+               if (res === 1) {
+                   this.props.history.push('/admin')
+               }
+           })
+        } else {
+            API.PostImageP(this.state.file.fto,this.state.file.fto.name).then(res=>{
+                console.log(res)
+            })
+            API.PutAdmin(this.state).then(res=>{
+                if (res === 1) {
+                    this.props.history.push('/admin')
+                }
+            })
+        }
+    }
+
     render() {
         return (
             <div>
@@ -47,11 +86,11 @@ class EAdmin extends Component {
                                     </div>
                                     <div className="form-group">
                                         <label>USERNAME</label>
-                                        <input value={this.state.username} name="kategori" className="form-control" type="text" onChange={this.dataHandler}></input>
+                                        <input value={this.state.username} name="username" className="form-control" type="text" onChange={this.dataHandler}></input>
                                     </div>
                                     <div className="form-group">
                                         <label>EMAIL</label>
-                                        <input value={this.state.email} name="harga" className="form-control" type="text" onChange={this.dataHandler} ></input>
+                                        <input value={this.state.email} name="email" className="form-control" type="text" onChange={this.dataHandler} ></input>
                                     </div>
                                     <div className="form-group">
                                         <p><img src={'http://localhost/api_olsop_fix/server/asset/img/' + this.state.foto} width="250" height="200" alt="test" /></p>
