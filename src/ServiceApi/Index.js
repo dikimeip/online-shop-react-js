@@ -117,6 +117,7 @@ const PostUser = (data) => POSTUSER('UserController',data)
 const PostPesan = (data) => POSTPESAN('PemesananController',data)
 const GetPesan = (data) => GETPESAN('PemesananController?id',data)
 const PostProduk = (data) => POSTPESAN('ProdukController',data)
+const PostAdmin = (data) => POSTPESAN('AdminController',data)
 const PostImageP = (data,name) => POSTIMAGE('ImageUpload',data,name)
 const PutProduk = (data) => PUTPRODUK('ProdukController',data);
 const PutPesan = (data) => PUTPRODUK('PemesananController',data);
@@ -146,7 +147,8 @@ const API = {
     GetUser,
     DeleteUser,
     GetUserId,
-    GetAdmin
+    GetAdmin,
+    PostAdmin
 }
 
 export default API
