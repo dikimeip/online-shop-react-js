@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import NavbarA from './NavbarA'
 import { Link } from 'react-router-dom/cjs/react-router-dom'
 import API from '../../ServiceApi/Index'
+import AllAdmin from './AllAdmin'
 
 class HAdmin extends Component{
     constructor(props){
@@ -12,7 +13,9 @@ class HAdmin extends Component{
     }
     componentDidMount=()=> {
          API.GetAdmin().then(res=>{
-             console.log(res)
+             this.setState({
+                 admin : res
+             })
          })
     }
     render(){
@@ -24,6 +27,7 @@ class HAdmin extends Component{
                     <br/>
                     <Link className="btn btn-info">TAMBAH ADMIN</Link>
                     <hr/>
+                    <AllAdmin data={this.state.admin} />
                 </div>
             </div>
         )
