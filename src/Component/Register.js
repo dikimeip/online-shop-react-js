@@ -12,7 +12,7 @@ class Register extends Component {
             nohp:"",
             email:"",
             password:"",
-            foto:"anonim",
+            foto:"user.jpg",
             err:""
         }
     }

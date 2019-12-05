@@ -40,7 +40,9 @@ class Login extends Component {
                     idLogin:"2"
                 })
             } else {
-                console.log('Gagal')
+                this.setState({
+                    gagalLogin : "LOGIN FAILED,PLEACE REGISTER NOW"
+                })
             }
         })
     }
@@ -83,10 +85,12 @@ class Login extends Component {
                                     </div>
                                     <input type="submit" value="LOGIN" className="btn btn-info" onSubmit={this.handlerSubmit} />
                                 </form>
+                                <br/>
                                 {
                                     this.state.gagalLogin
                                 }
                                 <br/>
+                                <hr/>
                                 <Link to={'/register'}>DAFTAR AKUN</Link>
                             </div>
                         </div>
