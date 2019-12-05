@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import NavbarU from './NavbarU'
+import API from '../../ServiceApi/Index'
 
 class EditUser extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            id : '',
             nama : '',
             alamat : '',
             hp: '',
@@ -14,7 +16,16 @@ class EditUser extends Component {
     }
     componentDidMount = () => {
         const id = this.props.match.params.id
-        console.log(id)
+        API.GetUserId(id).then(res=>{
+            this.setState({
+                id : res.id_user,
+                nama : res.nama_user,
+                alamat : res.alamat_user,
+                hp : res.no_hp_user,
+                email : res.email_user,
+                foto : res.photo_user,
+            })
+        })
     }
     render() {
         return (
