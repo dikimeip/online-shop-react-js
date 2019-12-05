@@ -72,7 +72,7 @@ class Login extends Component {
                                     </div>
                                     <div className="form-group">
                                         <label>MASUKAN PASSWORD</label>
-                                        <input type="text" name="password" className="form-control" onChange={this.handlerChange} />
+                                        <input type="password" name="password" className="form-control" onChange={this.handlerChange} />
                                     </div>
                                     <div className="form-group">
                                         <select name="level" className="form-control" onChange={this.handlerChange}>

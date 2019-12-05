@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NavbarU from './NavbarU'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 
 class AkunU extends Component {
     constructor(props) {
@@ -39,6 +40,8 @@ class AkunU extends Component {
                                 <p><b>ALAMAT :</b> {this.state.alamat}  </p>
                                 <p><b>NO HP :</b> {this.state.nohp}  </p>
                                 <p><b>EMAIL :</b> {this.state.email}  </p>
+                                <p><img src={'http://localhost/api_olsop_fix/server/asset/img/' + this.state.foto} width="250" height="200" alt="test" /></p>
+                                <Link className="btn btn-info">EDIT</Link>
                             </div>
                         </div>
                     </div>
