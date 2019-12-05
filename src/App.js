@@ -23,6 +23,7 @@ import DetailUser from './Component/Admin/DetailUser';
 import HAdmin from './Component/Admin/HAdmin';
 import TambahAdmin from './Component/Admin/TambahAdmin';
 import EAdmin from './Component/Admin/EAdmin';
+import EditUser from './Component/User/EditUser';
 
 function App() {
   return (
@@ -50,7 +51,7 @@ function App() {
         <Route path='/hadmin' component={HAdmin}/>
         <Route path='/tadmin' component={TambahAdmin}/>
         <Route path='/editadmin/:id' component={EAdmin}/>
-
+        <Route path='/edituser/:id' component={EditUser}/>
 
 
     </BrowserRouter>
