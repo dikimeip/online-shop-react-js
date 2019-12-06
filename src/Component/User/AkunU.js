@@ -18,19 +18,21 @@ class AkunU extends Component {
     componentDidMount = () => {
         if (sessionStorage.getItem('isLogin')) {
             const datas = JSON.parse(sessionStorage.getItem('isLogin'))
-            this.setState({
-                id: datas[0].id_user
-            })
+            console.log(datas)
+            // this.setState({
+            //     id: datas[0].id_user
+            // })
         }
 
         API.GetUserId(this.state.id).then(res=>{
-            this.setState({
-                nama: res.nama_user,
-                alamat: res.alamat_user,
-                nohp: res.no_hp_user,
-                email: res.email_user,
-                foto: res.photo_user,
-            })
+            console.log(res)
+            // this.setState({
+            //     nama: res.nama_user,
+            //     alamat: res.alamat_user,
+            //     nohp: res.no_hp_user,
+            //     email: res.email_user,
+            //     foto: res.photo_user,
+            // })
         })
     }
     render() {

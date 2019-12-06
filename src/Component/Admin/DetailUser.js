@@ -9,9 +9,7 @@ class DetailUser extends Component {
             nama: "",
             alamat: "",
             nohp: "",
-            email: "",
-            // password:"",
-            // foto:"anonim",
+            email: ""
         }
     }
 

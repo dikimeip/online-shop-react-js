@@ -96,7 +96,6 @@ class EAdmin extends Component {
                                         <input value={this.state.email} name="email" className="form-control" type="text" onChange={this.dataHandler} ></input>
                                     </div>
                                     <div className="form-group">
-                                        <p><img src={'http://localhost/api_olsop_fix/server/asset/img/' + this.state.foto} width="250" height="200" alt="test" /></p>
                                         <input name="fotos" className="form-control" type="file" onChange={this.imgHandler} ></input>
                                     </div>
                                     <input value="SIMPAN" className="btn btn-info" type="submit" ></input>
