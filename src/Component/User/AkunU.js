@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NavbarU from './NavbarU'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import API from '../../ServiceApi/Index'
 
 class AkunU extends Component {
     constructor(props) {
@@ -18,14 +19,19 @@ class AkunU extends Component {
         if (sessionStorage.getItem('isLogin')) {
             const datas = JSON.parse(sessionStorage.getItem('isLogin'))
             this.setState({
-                id: datas[0].id_user,
-                nama: datas[0].nama_user,
-                alamat: datas[0].alamat_user,
-                nohp: datas[0].no_hp_user,
-                email: datas[0].email_user,
-                foto: datas[0].photo_user,
+                id: datas[0].id_user
             })
         }
+
+        API.GetUserId(this.state.id).then(res=>{
+            this.setState({
+                nama: res.nama_user,
+                alamat: res.alamat_user,
+                nohp: res.no_hp_user,
+                email: res.email_user,
+                foto: res.photo_user,
+            })
+        })
     }
     render() {
         return (
