@@ -9,7 +9,7 @@ class EAdmin extends Component {
             id: '',
             nama: '',
             username: '',
-            password :'' ,
+            password: '',
             email: '',
             foto: '',
             fotos: '',
@@ -22,19 +22,19 @@ class EAdmin extends Component {
         const id = this.props.match.params.id
         API.GetAdminId(id).then(res => {
             this.setState({
-                id : res.id_admin,
-                nama : res.nama_admin,
-                username : res.username_admin,
-                password : res.password_admin,
-                email : res.email_admin,
-                foto : res.foto_admin
+                id: res.id_admin,
+                nama: res.nama_admin,
+                username: res.username_admin,
+                password: res.password_admin,
+                email: res.email_admin,
+                foto: res.foto_admin
             })
         })
     }
 
     dataHandler = (event) => {
         this.setState({
-            [event.target.name] : event.target.value
+            [event.target.name]: event.target.value
         })
     }
 
@@ -50,18 +50,21 @@ class EAdmin extends Component {
 
     submitHandler = (e) => {
         e.preventDefault()
+        //console.log(this.state)
         if (this.state.fotos === "") {
-           API.PutAdmin(this.state).then(res=>{
-               if (res === 1) {
-                   this.props.history.push('/admin')
-               }
-           })
+            API.PutAdmin(this.state).then(res => {
+                console.log(res)
+                if (res.status === 1) {
+                    this.props.history.push('/admin')
+                }
+            })
         } else {
-            API.PostImageP(this.state.file.fto,this.state.file.fto.name).then(res=>{
+            console.log('ada')
+            API.PostImageP(this.state.file.fto, this.state.file.fto.name).then(res => {
                 console.log(res)
             })
-            API.PutAdmin(this.state).then(res=>{
-                if (res === 1) {
+            API.PutAdmin(this.state).then(res => {
+                if (res.status === 1) {
                     this.props.history.push('/admin')
                 }
             })

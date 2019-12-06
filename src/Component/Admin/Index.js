@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NavbarA from './NavbarA'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import API from '../../ServiceApi/Index'
 
 
 class Index extends Component {
@@ -17,11 +18,15 @@ class Index extends Component {
     componentDidMount = () => {
         const data = JSON.parse(sessionStorage.getItem('isAdmin'))
         this.setState({
-            id : data[0].id_admin,
-            nama : data[0].nama_admin,
-            username : data[0].username_admin,
-            email : data[0].email_admin,
-            foto : data[0].	foto_admin
+            id : data[0].id_admin
+        })
+        API.GetAdminId(this.state.id).then(res=>{
+            this.setState({
+                nama : data[0].nama_admin,
+                username : data[0].username_admin,
+                email : data[0].email_admin,
+                foto : data[0].foto_admin
+            })
         })
     }
     render() {
