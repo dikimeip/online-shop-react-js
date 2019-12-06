@@ -22,10 +22,10 @@ class Index extends Component {
         })
         API.GetAdminId(this.state.id).then(res=>{
             this.setState({
-                nama : data[0].nama_admin,
-                username : data[0].username_admin,
-                email : data[0].email_admin,
-                foto : data[0].foto_admin
+                nama : res.nama_admin,
+                username : res.username_admin,
+                email : res.email_admin,
+                foto : res.foto_admin
             })
         })
     }
