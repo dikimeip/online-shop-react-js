@@ -15,12 +15,13 @@ class Pemesanan extends Component{
         if (sessionStorage.getItem('isLogin')) {
             const datas = JSON.parse(sessionStorage.getItem('isLogin'))
             const id = datas[0].id_user
-            API.GetPesan(id).then(res=>{
-                console.log(res)
-                this.setState({
-                    mhs: res.data
-                })
-            })
+            console.log(id)
+            // API.GetPesan(id).then(res=>{
+            //     console.log(res)
+            //     this.setState({
+            //         mhs: res.data
+            //     })
+            // })
         }
     }
 

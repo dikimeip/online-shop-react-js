@@ -50,9 +50,10 @@ class EditUser extends Component {
             })
         } else {
             API.PostImageP(this.state.file.fto, this.state.file.fto.name).then(res => {
-                console.log('img_ok')
+                //console.log('img_ok')
             })
             API.PutUser(this.state).then(res=>{
+               //console.log(res)
                 if (res.status === 1) {
                     this.props.history.push('/akunU')
                 }
