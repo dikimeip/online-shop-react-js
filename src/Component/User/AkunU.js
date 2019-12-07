@@ -5,9 +5,9 @@ import API from '../../ServiceApi/Index'
 
 class AkunU extends Component {
     constructor(props) {
-        super(props) 
+        super(props)
         this.state = {
-            id : '',
+            id: '',
             nama: '',
             alamat: '',
             nohp: '',
@@ -15,24 +15,23 @@ class AkunU extends Component {
             foto: ''
         }
     }
-    componentDidMount = () => {
-        if (sessionStorage.getItem('isLogin')) {
-            const datas = JSON.parse(sessionStorage.getItem('isLogin'))
-            console.log(datas)
-            // this.setState({
-            //     id: datas[0].id_user
-            // })
-        }
 
-        API.GetUserId(this.state.id).then(res=>{
-            console.log(res)
-            // this.setState({
-            //     nama: res.nama_user,
-            //     alamat: res.alamat_user,
-            //     nohp: res.no_hp_user,
-            //     email: res.email_user,
-            //     foto: res.photo_user,
-            // })
+    getData = () => {
+        
+    }
+
+    componentDidMount = () => {
+        const data = JSON.parse(sessionStorage.getItem('isLogin'))
+        const id = data[0].id_user
+        API.GetUserId(id).then(res=>{
+            this.setState({
+                id : res.id_user,
+                nama: res.nama_user,
+                alamat: res.alamat_user,
+                nohp: res.no_hp_user,
+                email: res.email_user,
+                foto: res.photo_user,
+            })
         })
     }
     render() {
@@ -51,7 +50,7 @@ class AkunU extends Component {
                                 <p><b>NO HP :</b> {this.state.nohp}  </p>
                                 <p><b>EMAIL :</b> {this.state.email}  </p>
                                 <p><img src={'http://localhost/api_olsop_fix/server/asset/img/' + this.state.foto} width="250" height="200" alt="test" /></p>
-                                <Link className="btn btn-info" to={'/edituser/'+this.state.id} >EDIT</Link>
+                                <Link className="btn btn-info" to={'/edituser/' + this.state.id} >EDIT</Link>
                             </div>
                         </div>
                     </div>
