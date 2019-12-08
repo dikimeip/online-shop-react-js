@@ -2,14 +2,21 @@ import React, { Component } from 'react'
 import Navbar from './Navbar'
 import API from '../ServiceApi/Index'
 import Produk from './Produk'
+//import Pagination from 'react-js-pagination'
 
 class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            Produk: []
+            Produk: [],
+           // activePage : 0
         }
     }
+
+    // handlerChange = (pageNumber) =>{
+    //     console.log(pageNumber)
+    //     this.setState({activePage:pageNumber})
+    // }
 
 
 
@@ -31,6 +38,13 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+                {/* <Pagination
+                    activePage = {this.state.activePage}
+                    itemsCountPerPage = {4}
+                    totalItemsCount ={10}
+                    pageRangeDisplayed = {3}
+                    onChange = {this.handlerChange}
+                /> */}
             </div>
         )
     }
